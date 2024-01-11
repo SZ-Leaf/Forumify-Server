@@ -26,6 +26,7 @@ const findThreadByPk = (req, res) => {
 }
 
 const createThread = (req, res) => {
+   
    const newThread = {...req.body, UserId: req.userId}
    Thread.create(newThread)
       .then((thread) => {
