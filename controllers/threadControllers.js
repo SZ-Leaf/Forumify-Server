@@ -26,28 +26,14 @@ const findThreadByPk = (req, res) => {
 }
 
 const createThread = (req, res) => {
-   const newThread = {...req.body, UserId: req.userId }
+   const newThread = {...req.body, UserId: req.userId}
    Thread.create(newThread)
       .then((thread) => {
          res.status(201).json({ message: 'Thread Created', data: thread })
       })
-      // .catch((error) => {
-      //    res.status(500).json({ message: `Could not create Thread`, data: error.message })
-      // })
       .catch((error) => {
-         if (error.name === 'SequelizeValidationError') {
-            // Handle validation errors
-            const validationErrors = error.errors.map((e) => ({
-               field: e.path,
-               message: e.message,
-            }));
-            res.status(400).json({ message: 'Validation Error', errors: validationErrors });
-         } else {
-            // Handle other errors
-            console.error(error);
-            res.status(500).json({ message: 'Could not create Thread', data: error.message });
-         }
-      });
+         res.status(500).json({ message: `Could not create Thread`, data: error.message })
+      })
 }
 
 const updateThread = (req, res) => {
