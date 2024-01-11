@@ -23,8 +23,8 @@ const login = (req, res) => {
                }
                const token = jwt.sign({
                   data: result.username,
-                  // set user id in the token so we can retrieve it when creating a new thread or reply in order to give value to the foreign key UserId
                   UserId: result.id,
+                  RoleId: result.RoleId,
                },
                   SECRET_KEY, { expiresIn: 3600 });
 

@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
       "SubjectId":{
          type: DataTypes.INTEGER,
          allowNull: false,
+      },
+      "UserId": {  // Add UserId field
+         type: DataTypes.INTEGER,
+         allowNull: false,
       }
    })
 }
