@@ -30,7 +30,7 @@ const login = (req, res) => {
 
                // We can also stock the jwt in a cookie on the client side
                // res.cookie('coworkingapi_jwt', token)   
-               res.json({message: 'Login successful', data: {token}})
+               res.json({message: 'Login successful', data: token})
             })
 
       }).catch((err) => {
