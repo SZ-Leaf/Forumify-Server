@@ -5,8 +5,9 @@ module.exports = (sequelize, DataTypes) => {
          allowNull: false,
          validate: {
             len: {
-               msg: 'Title length must be at least 1 character long.',
+               msg: 'Title length must be between 1 and 60 characters.',
                min: 1, // You can adjust the range as needed
+               max: 60,
             },
          }
       },
