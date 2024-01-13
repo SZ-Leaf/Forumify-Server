@@ -84,14 +84,14 @@ const deleteUser = (req, res) => {
          if (result) {
             return result.destroy()
                   .then((result) => {
-                     res.json({ mesage: `User has been deleted successfully.`, data: result })
+                     res.json({ message: `User has been deleted successfully.`, data: result })
                   })
          } else {
-            res.status(404).json({ mesage: `User not found.` })
+            res.status(404).json({ message: `User not found.` })
          }
       })
       .catch((error) => {
-         res.status(500).json({ mesage: `Error during deleteUser request.`, data: error.message })
+         res.status(500).json({ message: `Error during deleteUser request.`, data: error.message })
       })
 }
 

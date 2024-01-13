@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const {findAllUsers, findUserbyPk, createUser, updateUser, deleteUser} = require('../controllers/userControllers')
-const { login, protect, correctUser, restrict } = require('../controllers/authControllers')
+const { login, protect, correctUser, restrict, restrictToOwnUser } = require('../controllers/authControllers')
 
 router
    .route('/')
