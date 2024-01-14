@@ -27,7 +27,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       "UserId": {  // Add UserId field
          type: DataTypes.INTEGER,
-         allowNull: false,
+         // allowNull: false,
       }
+   },{
+      onDelete: 'CASCADE',
    })
 }

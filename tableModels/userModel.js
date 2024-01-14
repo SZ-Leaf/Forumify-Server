@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
                 },
             },
         },{
-            onDelete: 'CASCADE',
+            onDelete: 'SET NULL',
             defaultScope: {
                 attributes: { exclude: ['password'] }
             },
