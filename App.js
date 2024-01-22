@@ -1,9 +1,11 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+// Plus other dependecies added later
 
 // require is native to node and allows to load an entire module
 
+//Configure the port
 const app = express();
 const port = 3001;
 

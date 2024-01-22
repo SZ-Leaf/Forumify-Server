@@ -1,16 +1,16 @@
 const replies = [
    {
-      "content": "Totally agree no cap!",
+      "content": "theres plenty of cobalt but u are phased. Dont use any vehicle or shapeshift or 2 seater mounts",
       "UserId": "2",
       "ThreadId": "1"
    },
    {
-      "content": "Nice list, here are my top 10: ....",
+      "content": "Yes you can get it from vault.",
       "UserId": "3",
       "ThreadId": "2"
    },
    {
-      "content": "I believe it should've won an Oscar but you must not forget...",
+      "content": "Good to hear, I'll hit you up ingame.",
       "UserId": "1",
       "ThreadId": "3"
    }
