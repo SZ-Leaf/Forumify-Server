@@ -1,9 +1,17 @@
 const { UniqueConstraintError, ValidationError, QueryTypes, sequelize } = require('sequelize')
-const {Thread} = require('../mock/sequelizeSetup')
+const {Thread, User, Reply} = require('../mock/sequelizeSetup')
 
 
 const findAllThreads = (req, res) => {
-   Thread.findAll()
+   Thread.findAll({
+      include: [
+         {
+            model: User,
+         },
+         {
+            model: Reply,
+         },
+      ],})
       .then((result) => {
          res.json(result)
       }).catch((error) => {
@@ -12,7 +20,15 @@ const findAllThreads = (req, res) => {
 }
 
 const findThreadByPk = (req, res) => {
-   Thread.findByPk((parseInt(req.params.id)))
+   Thread.findByPk(parseInt(req.params.id), {
+      include: [
+         {
+            model: User,
+         },
+         {
+            model: Reply,
+         },
+      ],})
       .then((result) => {
          if (result){
             res.json({message: 'Thread found.', data: result})
