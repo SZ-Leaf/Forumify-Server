@@ -1,4 +1,4 @@
-const { User } = require('../mock/sequelizeSetup');
+const { User, Thread, Reply } = require('../mock/sequelizeSetup');
 const { UniqueConstraintError, ValidationError } = require('sequelize')
 const bcrypt = require('bcrypt')
 
@@ -12,7 +12,15 @@ const findAllUsers = (req, res) =>{
 }
 
 const findUserbyPk = (req, res) =>{
-   User.findByPk((parseInt(req.params.id)))
+   User.findByPk((parseInt(req.params.id)), {
+      include: [
+         {
+            model: Thread,
+         },
+         {
+            model: Reply,
+         },
+      ],})
       .then((result) => {
          if (result) {
             res.json({Message: 'User has been found.', data: result})

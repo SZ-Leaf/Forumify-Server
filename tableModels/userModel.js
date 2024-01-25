@@ -12,9 +12,6 @@ module.exports = (sequelize, DataTypes) => {
                 unique: {
                     msg: "Name already taken."
                 },
-                unique: {
-                    msg: "Username already taken"
-                },
 
                 // name value validation
                 validate: {
