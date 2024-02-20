@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
                 },
             },
         },{
-            onDelete: 'SET NULL',
+            // onDelete: 'SET NULL',
             defaultScope: {
                 attributes: { exclude: ['password'] }
             },
